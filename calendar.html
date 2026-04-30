@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 Payment Calendar</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">2026 Calendar View</span>
+        <h1 id="calendar-page-title">2026 SSI Payment Dates</h1>
+        <p id="calendar-page-subtext">
+          Full payment schedule for the selected benefit type.
+        </p>
+      </div>
+
+      <div class="benefit-tabs">
+        <button class="tab active" data-benefit="ssi">SSI</button>
+        <button class="tab" data-benefit="ssdi">SSDI</button>
+        <button class="tab" data-benefit="retirement">Retirement</button>
+        <button class="tab" data-benefit="survivor">Survivor</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="card">
+        <h3 id="calendar-section-title">2026 Payment Dates</h3>
+        <ul class="payment-list" id="calendar-payment-list"></ul>
+      </section>
+
+      <section class="card" style="margin-top: 24px;">
+        <button class="primary-button" onclick="window.location.href='index.html'">
+          Back to Home
+        </button>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const calendarData = {
+      ssi: {
+        title: "2026 SSI Payment Dates",
+        subtext: "Full SSI payment schedule for 2026.",
+        dates: [
+          "January 1, 2026",
+          "January 30, 2026",
+          "March 1, 2026",
+          "April 1, 2026",
+          "May 1, 2026",
+          "May 29, 2026",
+          "July 1, 2026",
+          "August 1, 2026"
+        ]
+      },
+      ssdi: {
+        title: "2026 SSDI Payment Dates",
+        subtext: "SSDI dates vary based on birth date and Wednesday schedule.",
+        dates: [
+          "May 13, 2026",
+          "May 20, 2026",
+          "May 27, 2026",
+          "June 10, 2026",
+          "June 17, 2026",
+          "June 24, 2026"
+        ]
+      },
+      retirement: {
+        title: "2026 Retirement Payment Dates",
+        subtext: "Social Security retirement payments by standard monthly schedule.",
+        dates: [
+          "May 13, 2026",
+          "May 20, 2026",
+          "May 27, 2026",
+          "June 10, 2026",
+          "June 17, 2026",
+          "June 24, 2026"
+        ]
+      },
+      survivor: {
+        title: "2026 Survivor Benefit Payment Dates",
+        subtext: "Survivor benefits typically follow Social Security timing rules.",
+        dates: [
+          "May 20, 2026",
+          "May 27, 2026",
+          "June 10, 2026",
+          "June 17, 2026",
+          "June 24, 2026"
+        ]
+      }
+    };
+
+    const tabs = document.querySelectorAll(".tab");
+    const titleEl = document.getElementById("calendar-page-title");
+    const subtextEl = document.getElementById("calendar-page-subtext");
+    const sectionTitleEl = document.getElementById("calendar-section-title");
+    const listEl = document.getElementById("calendar-payment-list");
+
+    function getBenefitFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("benefit") || "ssi";
+    }
+
+    function renderCalendar(benefitKey) {
+      const data = calendarData[benefitKey];
+      if (!data) return;
+
+      titleEl.textContent = data.title;
+      subtextEl.textContent = data.subtext;
+      sectionTitleEl.textContent = data.title;
+      listEl.innerHTML = "";
+
+      data.dates.forEach((date) => {
+        const li = document.createElement("li");
+        li.textContent = date;
+        listEl.appendChild(li);
+      });
+
+      tabs.forEach((tab) => {
+        tab.classList.toggle("active", tab.dataset.benefit === benefitKey);
+      });
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const benefit = tab.dataset.benefit;
+        history.replaceState({}, "", `calendar.html?benefit=${benefit}`);
+        renderCalendar(benefit);
+      });
+    });
+
+    renderCalendar(getBenefitFromUrl());
+  </script>
+</body>
+</html>

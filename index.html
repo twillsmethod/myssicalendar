@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My SSI Calendar</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-top">
+        <span class="eyebrow">Free Payment Date Tool</span>
+        <div class="trust-badges">
+          <span class="trust-pill">Updated for 2026</span>
+          <span class="trust-pill">Mobile Friendly</span>
+          <span class="trust-pill">No Login Required</span>
+        </div>
+      </div>
+
+      <div class="hero-copy">
+        <h1 id="hero-title">Find Your SSI Payment Date Instantly</h1>
+        <p id="hero-subtext">
+          Fast, free payment dates for SSI, SSDI, and Social Security benefits
+          in one clean dashboard.
+        </p>
+      </div>
+
+      <div class="benefit-tabs">
+        <button class="tab active" data-benefit="ssi">SSI</button>
+        <button class="tab" data-benefit="ssdi">SSDI</button>
+        <button class="tab" data-benefit="retirement">Retirement</button>
+        <button class="tab" data-benefit="survivor">Survivor</button>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <section class="card featured-card">
+        <p class="card-label">Next Payment</p>
+        <h2 id="next-payment-date">May 1, 2026</h2>
+
+        <div class="status-row">
+          <span class="status-badge" id="days-away">19 days away</span>
+        </div>
+
+        <p class="subtext" id="today-status">Today: No payment scheduled</p>
+      </section>
+
+      <section class="card info-card warm-card">
+        <h3 id="why-title">Why Two Payments Sometimes Happen</h3>
+        <p id="why-text">
+          When the 1st falls on a weekend or holiday, SSI payments may arrive early.
+        </p>
+        <ul id="why-list">
+          <li>June payment → May 29</li>
+          <li>July payment → July 1</li>
+        </ul>
+      </section>
+
+      <section class="card upcoming-card">
+        <h3 id="upcoming-title">Upcoming Payments</h3>
+        <ul class="payment-list" id="payment-list"></ul>
+
+        <button class="primary-button" id="calendar-button">See 2026 Payment Dates</button>
+      </section>
+
+      <section class="card extra-card">
+        <h3>Helpful Tools</h3>
+        <p>Keep the experience simple now, then expand later.</p>
+
+        <div class="tool-grid">
+          <button class="secondary-button" id="print-button">Print</button>
+          <button class="secondary-button" id="email-button">Email Reminder</button>
+          <button class="secondary-button" id="pdf-button">Download PDF</button>
+        </div>
+
+        <p class="tool-message" id="tool-message"></p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer-brand">MySSICalendar.com</p>
+
+      <div class="footer-links">
+        <span>Privacy</span>
+        <span>Contact</span>
+        <span>Disclaimer</span>
+        <span>Last Updated: April 2026</span>
+      </div>
+
+      <small>
+        This website is not affiliated with the Social Security Administration.
+        Information shown here is for general informational purposes only.
+      </small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
