@@ -5,7 +5,24 @@ Live Site: https://twillsmethod.github.io/myssicalendar/
 ---
 
 ## Preview
+## Project Summary
 
+MySSICalendar is a lightweight web application designed to simplify how users access Social Security payment schedules.
+
+Instead of navigating complex government tables or PDFs, this tool provides a clean, interactive interface that instantly displays upcoming payment dates and dynamically calculates how far away the next payment is.
+
+The project focuses on:
+- Translating static government data into a user-friendly experience
+- Implementing real-time date calculations using JavaScript
+- Creating a responsive, accessible UI for everyday users
+
+This project demonstrates my ability to take a real-world problem, structure the logic behind it, and deliver a practical, usable solution.
+
+## Key Logic Highlight
+
+- Dynamic “days away” calculation based on today's date
+- Conditional handling for early payments when the 1st falls on weekends/holidays
+- Tab-based UI state switching for multiple benefit types
 ![MySSICalendar Hero](assets/Hero.png)
 
 ![MySSICalendar Dashboard](assets/Dashboard.png)
