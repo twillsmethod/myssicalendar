@@ -16,7 +16,11 @@ The project focuses on:
 - Implementing real-time date calculations using JavaScript
 - Creating a responsive, accessible UI for everyday users
 
-This project demonstrates my ability to take a real-world problem, structure the logic behind it, and deliver a practical, usable solution.
+Most Social Security payment schedules are buried in tables or PDFs that aren’t easy to read or interpret.
+
+I built this to simplify that experience — instead of figuring it out manually, the app shows the next payment date instantly and calculates how far away it is.
+
+This reflects how I approach problems: simplify the experience, structure the logic, and build something people can actually use.
 
 ## Key Logic Highlight
 
