@@ -6,9 +6,9 @@ Live Site: https://twillsmethod.github.io/myssicalendar/
 
 ## Preview
 
-![MySSICalendar Hero](assets/hero.png)
+![MySSICalendar Hero](assets/Hero.png)
 
-![MySSICalendar Dashboard](assets/dashboard.png)
+![MySSICalendar Dashboard](assets/Dashboard.png)
 
 ---
 
