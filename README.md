@@ -4,6 +4,14 @@ Live Site: https://twillsmethod.github.io/myssicalendar/
 
 ---
 
+## Preview
+
+![MySSICalendar Hero](assets/hero.png)
+
+![MySSICalendar Dashboard](assets/dashboard.png)
+
+---
+
 ## Overview
 
 MySSICalendar is a simple, fast web tool that helps users instantly check upcoming SSI, SSDI, and Social Security payment dates.
@@ -36,13 +44,13 @@ This tool simplifies that process into a single, accessible interface.
 - HTML
 - CSS
 - JavaScript
-- GitHub Pages (deployment)
+- GitHub Pages
 
 ---
 
 ## Live Demo
 
-👉 https://twillsmethod.github.io/myssicalendar/
+https://twillsmethod.github.io/myssicalendar/
 
 ---
 
@@ -50,7 +58,7 @@ This tool simplifies that process into a single, accessible interface.
 
 - Auto-generated yearly payment schedules
 - Email reminders
-- Downloadable calendar (PDF)
+- Downloadable calendar PDF
 - Data validation from official SSA sources
 - Monetization via helpful financial resources
 
